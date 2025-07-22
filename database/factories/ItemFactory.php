@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Lab;
+use App\Models\Item;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,7 @@ class ItemFactory extends Factory
         $total = $this->faker->numberBetween(10, 100);
         return [
             'name'=>$this->faker->word,
-            'type'=>$this->faker->randomElement(['uniform','stationery','book','equipment']),
+            'type'=>$this->faker->randomElement(['uniform', 'stationery', 'equipment']),
             'quantity_total' => $total,
             'quantity_available'=> $this->faker->numberBetween(0,$total),
             'issued_once' => $this->faker->boolean,

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('issued_at')->useCurrent();
             $table->timestamp('returned_at')->nullable();
             $table->text('notes')->nullable();
+            $table->timestamps();
 
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
