@@ -12,22 +12,21 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class ItemFactory extends Factory
 {
     protected $model = Item::class;
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+
     public function definition(): array
-    {
-        $total = $this->faker->numberBetween(10, 100);
-        return [
-            'name'=>$this->faker->word,
-            'type'=>$this->faker->randomElement(['uniform', 'stationery', 'equipment']),
-            'quantity_total' => $total,
-            'quantity_available'=> $this->faker->numberBetween(0,$total),
-            'issued_once' => $this->faker->boolean,
-            'reorder_threshold' => $this->faker->numberBetween(5, 20),
-            'lab_id'=> Lab::factory(),
-        ];
-    }
+{
+    $type = $this->faker->randomElement(['uniform', 'stationery', 'equipment', 'chemical']);
+    $total = $this->faker->numberBetween(10, 100);
+
+    return [
+        'name' => $this->faker->word,
+        'type' => $type,
+        'quantity_total' => $total,
+        'quantity_available' => $this->faker->numberBetween(0, $total),
+        'issued_once' => $this->faker->boolean,
+        'reorder_threshold' => $this->faker->numberBetween(5, 20),
+        'lab_id' => in_array($type, ['equipment', 'chemical']) ? Lab::inRandomOrder()->first()?->id : null,
+    ];
+}
+
 }

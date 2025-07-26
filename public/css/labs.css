@@ -1,0 +1,301 @@
+/* Base Styles */
+.labs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-import {
+    background-color: white;
+    color: #3498db;
+    border: 1px solid #3498db;
+}
+
+.btn-import:hover {
+    background-color: #f8f9fa;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.filter-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 10px 8px 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group select {
+    appearance: none;
+    padding-right: 30px;
+}
+
+.btn-filter {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.btn-filter:hover {
+    background-color: #dfe6e9;
+}
+
+/* Table Styles */
+.table-container {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.labs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.labs-table th {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.labs-table td {
+    padding: 12px 15px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+}
+
+.labs-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Lab Icons */
+.lab-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lab-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: white;
+}
+
+.lab-icon.chemistry {
+    background-color: #3498db;
+}
+
+.lab-icon.biology {
+    background-color: #2ecc71;
+}
+
+.lab-icon.physics {
+    background-color: #9b59b6;
+}
+
+.lab-icon.computer {
+    background-color: #e74c3c;
+}
+
+/* Badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge-active {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.badge-maintenance {
+    background-color: #fff3e0;
+    color: #ffa000;
+}
+
+.badge-closed {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 5px;
+}
+
+.btn-action {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7f8c8d;
+    transition: all 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-view:hover {
+    color: #3498db;
+}
+
+.btn-edit:hover {
+    color: #f39c12;
+}
+
+.btn-delete:hover {
+    color: #e74c3c;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled):not(.active) {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.pagination button.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .filter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .labs-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .lab-name {
+        min-width: 150px;
+    }
+}

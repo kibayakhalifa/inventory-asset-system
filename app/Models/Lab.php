@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Lab extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "name","location","description",
+
+    const TYPES = [
+        'Computer Lab',
+        'Physics Lab',
+        'Chemistry Lab',
+        'Biology Lab',
     ];
+
+    protected $fillable = ["name", "location", "description"];
 
     public function items()
     {

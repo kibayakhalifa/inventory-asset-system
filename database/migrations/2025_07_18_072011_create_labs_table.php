@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('labs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->enum('name', ['Computer Lab', 'Physics Lab', 'Chemistry Lab', 'Biology Lab']);
             $table->string('location');
             $table->text('description')->nullable();
             $table->timestamps();
