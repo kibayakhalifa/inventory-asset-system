@@ -8,14 +8,12 @@
 
 @section('content')
     <div class="dashboard-container">
-        {{-- dashboard header --}}
         <div class="dashboard-header">
             <div class="header-text">
                 <h1>Inventory Dashboard</h1>
                 <p class="message">Welcome back, {{ Auth::user()->name }}!</p>
             </div>
 
-            {{-- search bar --}}
             <div class="search-container">
                 <input type="text" class="dashboard-search" placeholder="Search Items, Labs, Students or Users... ">
                 <svg class="search-icon" viewBox="0 0 24 24">

@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="items-container">
-        <!-- Page Header -->
+        
         <div class="page-header">
             <div>
                 <h1>Inventory Items</h1>
@@ -87,7 +87,7 @@
                     @forelse($items as $index => $item)
                         <tr>
                             <td>{{ ($items->currentPage() - 1) * $items->perPage() + $index + 1 }}</td>
-                            <!-- Auto-incremented ID -->
+                    
                             <td class="item-name">{{ $item->name }}</td>
                             <td class="item-type">{{ ucfirst($item->type) }}</td>
                             <td class="lab-name">{{ $item->lab?->name ?? 'General' }}</td>
@@ -131,4 +131,18 @@
             </div>
         @endif
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const flash = document.querySelector('.alert');
+        if (flash) {
+            setTimeout(() => {
+                flash.style.transition = 'opacity 0.5s ease-out';
+                flash.style.opacity = '0';
+                setTimeout(() => flash.remove(), 500); 
+            }, 4000); 
+        }
+    });
+</script>
+
 @endsection
