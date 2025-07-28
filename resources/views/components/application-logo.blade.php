@@ -1,1 +1,1 @@
-<img src="{{ asset('images/my-logo.png') }}" style="width: 90px; height: 110px;" alt="Inventory System Logo">
+<img src="{{ asset('images/my-logo.png') }}" alt="Logo" class="h-[100px] w-auto">

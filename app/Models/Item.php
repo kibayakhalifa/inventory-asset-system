@@ -26,11 +26,16 @@ class Item extends Model
     public function students()
     {
         return $this->belongsToMany(Student::class, 'item_students')
-        ->withPivot('issued_at','returned_at','notes')
-        ->withTimestamps();
+            ->withPivot('issued_at', 'returned_at', 'notes')
+            ->withTimestamps();
     }
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
     }
+    public function scopeGeneral($query)
+    {
+        return $query->whereNull('lab_id');
+    }
+
 }

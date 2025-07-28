@@ -17,8 +17,10 @@ class LabFactory extends Factory
      */
     public function definition(): array
     {
+        static $labs = ["Computer Lab","Physics Lab","Chemistry Lab","Biology Lab"];
+        static $index = 0;
         return [
-            'name' => $this->faker->company . ' Lab',
+            'name' => $labs[$index++ % count($labs)],
             'location' => $this->faker->buildingNumber . ' ' . $this->faker->streetName,
             'description' => $this->faker->sentence,
         ];
