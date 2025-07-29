@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Item;
+use App\Models\Lab;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\Transaction;
@@ -16,8 +17,8 @@ class TransactionSeeder extends Seeder
      */
     public function run(): void
     {
-        if (Item::count() === 0 || User::count() === 0 || Student::count() === 0){
-            $this->command->warn('Skipping TransactionSeeder: Items, Users, or Students not found.');
+        if (Item::count() === 0 || User::count() === 0 || Student::count() === 0 || Lab::count() === 0){
+            $this->command->warn('Skipping TransactionSeeder: Items, Users, Students or Labs not found.');
             return;
         }
         Transaction::factory(100)->create();

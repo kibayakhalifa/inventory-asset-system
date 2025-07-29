@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Item;
 use App\Models\User;
 use App\Models\Student;
+use App\Models\Lab;
 use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -14,6 +15,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class TransactionFactory extends Factory
 {
     protected $model = Transaction::class;
+
     /**
      * Define the model's default state.
      *
@@ -21,12 +23,16 @@ class TransactionFactory extends Factory
      */
     public function definition(): array
     {
+        $labIds = Lab::pluck('id')->toArray();
+
         return [
             'item_id' => Item::factory(),
             'user_id' => User::factory(),
             'student_id' => Student::factory(),
-            'action' => $this->faker->randomElement(['issued', 'returned']),
+            'lab_id' => fake()->boolean(70) ? fake()->randomElement($labIds) : null,
+            'action' => $this->faker->randomElement(['issue', 'return']),
             'quantity' => $this->faker->numberBetween(1, 5),
+
         ];
     }
 }

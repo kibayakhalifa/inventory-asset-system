@@ -1,0 +1,455 @@
+/* Base Styles */
+.transactions-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Alert Message */
+.alert {
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert i {
+    font-size: 18px;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.filter-form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-group {
+    position: relative;
+    flex: 1;
+    min-width: 150px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%237f8c8d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px;
+}
+
+.date-input {
+    min-width: 150px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-filter {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.btn-filter:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-reset {
+    background-color: #ffebee;
+    color: #e74c3c;
+}
+
+.btn-reset:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Table Styles */
+.table-wrapper {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+.transactions-table th {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.transactions-table td {
+    padding: 12px 15px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.transactions-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Column Specific Styles */
+.serial {
+    width: 50px;
+    text-align: center;
+}
+
+.item-name {
+    min-width: 150px;
+}
+
+.student-name,
+.staff-name {
+    min-width: 120px;
+}
+
+.department {
+    min-width: 120px;
+}
+
+.action-type {
+    width: 100px;
+    text-align: center;
+}
+
+.quantity {
+    width: 80px;
+    text-align: center;
+}
+
+.date {
+    width: 140px;
+}
+
+.actions {
+    width: 120px;
+    text-align: center;
+}
+
+/* Badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.badge-issue {
+    background-color: #fff3e0;
+    color: #e67e22;
+}
+
+.badge-return {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-action {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #7f8c8d;
+    transition: all 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #f8f9fa;
+}
+
+.btn-view:hover {
+    color: #3498db;
+}
+
+.btn-edit:hover {
+    color: #f39c12;
+}
+
+.btn-delete:hover {
+    color: #e74c3c;
+}
+
+/* Empty Message */
+.empty-message {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+/* Date Input Styling */
+.date-group {
+    min-width: 180px;
+}
+
+.date-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.date-input-wrapper {
+    position: relative;
+}
+
+.date-input {
+    padding: 8px 35px 8px 12px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.date-input-wrapper .fa-calendar-alt {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #718096;
+    pointer-events: none;
+}
+
+/* Show placeholder text when empty */
+.date-input:not(:focus):not(:valid)::before {
+    content: attr(placeholder);
+    color: #a0aec0;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* For browsers that support :has (future-proofing) */
+.date-input-wrapper:has(.date-input:not(:focus):not(:valid))::after {
+    content: attr(placeholder);
+    color: #a0aec0;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px 10px;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+.pagination nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination .pagination {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.pagination .pagination li {
+    display: inline-block;
+}
+
+.pagination .pagination a,
+.pagination .pagination span {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #3498db;
+    transition: background-color 0.2s;
+    min-width: 36px;
+    text-align: center;
+}
+
+.pagination .pagination .active span {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.pagination .pagination a:hover {
+    background-color: #ecf0f1;
+}
+
+/* Responsive behavior */
+@media (min-width: 768px) {
+    .pagination {
+        flex-wrap: nowrap;
+    }
+
+    .pagination nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pagination .pagination {
+        justify-content: flex-end;
+        width: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .pagination {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pagination nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pagination .pagination {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .items-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .empty-message {
+        padding: 15px 10px;
+    }
+}

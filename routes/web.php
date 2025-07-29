@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,9 +16,11 @@ Route::get('/dashboard', function () {
 
 //item route
 Route::resource('items', ItemController::class);
+//transaction route
+Route::resource('transactions', TransactionController::class);
+
 // stub routes to make sure there is no error
 Route::view('/labs', 'labs.index')->name('labs.index');
-Route::view('/transactions', 'transactions.index')->name('transactions.index');
 Route::view('/users', 'users.index')->name('users.index');
 Route::view('/reports', 'reports.index')->name('reports.index');
 

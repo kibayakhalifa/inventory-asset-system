@@ -38,5 +38,7 @@
             @yield('content')
         </main>
     </div>
+    <!-- Page-specific Scripts -->
+    @stack('page-js')
 </body>
 </html>
