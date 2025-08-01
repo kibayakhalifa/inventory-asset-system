@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
@@ -11,9 +12,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//dashboard route 
+Route::get('/dashboard', [DashboardController::class,'index'])
+->middleware(['auth','verified'])
+->name('dashboard');
 
 //item route
 Route::resource('items', ItemController::class);
