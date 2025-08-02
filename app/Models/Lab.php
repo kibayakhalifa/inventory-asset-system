@@ -9,14 +9,14 @@ class Lab extends Model
 {
     use HasFactory;
 
-    const TYPES = [
+    const ALLOWED_LAB_NAMES = [
         'Computer Lab',
         'Physics Lab',
         'Chemistry Lab',
-        'Biology Lab',
+        'Biology Lab'
     ];
 
-    protected $fillable = ["name", "location", "description"];
+    protected $fillable = ["name", "location", "description","status"];
 
     public function items()
     {

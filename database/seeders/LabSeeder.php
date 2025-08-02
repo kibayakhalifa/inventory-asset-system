@@ -17,21 +17,25 @@ class LabSeeder extends Seeder
                 'name' => 'Computer Lab',
                 'location' => 'Block A, Room 101',
                 'description' => 'Lab for computer science and IT practicals.',
+                'status' => 'active',
             ],
             [
                 'name' => 'Physics Lab',
                 'location' => 'Block B, Room 202',
                 'description' => 'Lab for physics experiments and electronics.',
+                'status' => 'maintenance',
             ],
             [
                 'name' => 'Chemistry Lab',
                 'location' => 'Block C, Room 303',
                 'description' => 'Lab for chemistry practicals and analysis.',
+                'status' => 'closed',
             ],
             [
                 'name' => 'Biology Lab',
                 'location' => 'Block D, Room 404',
                 'description' => 'Lab for biology dissections and microscopy.',
+                'status' => 'active',
             ],
         ];
 
@@ -40,4 +44,3 @@ class LabSeeder extends Seeder
         }
     }
 }
-

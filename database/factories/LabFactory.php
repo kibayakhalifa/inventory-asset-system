@@ -23,6 +23,7 @@ class LabFactory extends Factory
             'name' => $labs[$index++ % count($labs)],
             'location' => $this->faker->buildingNumber . ' ' . $this->faker->streetName,
             'description' => $this->faker->sentence,
+            'status' => $this->faker->randomElement(['active', 'closed', 'maintenance']),
         ];
     }
 }

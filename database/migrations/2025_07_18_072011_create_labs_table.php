@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('labs', function (Blueprint $table) {
             $table->id();
             $table->enum('name', ['Computer Lab', 'Physics Lab', 'Chemistry Lab', 'Biology Lab']);
+            $table->enum('status', ['Active','Maintenance','Closed'])->default('Active');
             $table->string('location');
             $table->text('description')->nullable();
             $table->timestamps();

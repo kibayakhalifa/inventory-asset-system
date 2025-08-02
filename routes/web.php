@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
 
 
@@ -27,11 +28,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);
     Route::put('/users/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggleStatus');
 });
-
+//lab route
+Route::resource('labs', LabController::class);
 
 
 // stub routes to make sure there is no error
-Route::view('/labs', 'labs.index')->name('labs.index');
 Route::view('/reports', 'reports.index')->name('reports.index');
 
 
