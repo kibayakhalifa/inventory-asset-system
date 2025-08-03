@@ -32,7 +32,7 @@ class TransactionFactory extends Factory
             'lab_id' => fake()->boolean(70) ? fake()->randomElement($labIds) : null,
             'action' => $this->faker->randomElement(['issue', 'return']),
             'quantity' => $this->faker->numberBetween(1, 5),
-
+            'condition' => $this->faker->randomElement(['new', 'good', 'worn', 'damaged']),
         ];
     }
 }

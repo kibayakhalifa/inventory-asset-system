@@ -1,15 +1,66 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Reports') }} {{-- Change this per page --}}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                <p>Welcome to the reports page.</p> {{-- Change this per page --}}
-            </div>
-        </div>
+@section('page-css')
+<link rel="stylesheet" href="{{ asset('css/reports.css') }}">
+@endsection
+
+@section('content')
+<div class="reports-container">
+    <div class="page-header">
+        <h1>Reports Center</h1>
     </div>
-</x-app-layout>
+
+    <div class="filters-section">
+        <form>
+            <div class="filter-group">
+                <label for="lab">Lab:</label>
+                <select id="lab" name="lab">
+                    <option>All Labs</option>
+                    <option>Physics</option>
+                    <option>Biology</option>
+                    <option>Chemistry</option>
+                    <option>Computer</option>
+                    <option>General</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="type">Report Type:</label>
+                <select id="type" name="type">
+                    <option>Transactions</option>
+                    <option>Items</option>
+                    <option>Users</option>
+                    <option>Logs</option>
+                    <option>Damaged</option>
+                </select>
+            </div>
+
+            <div class="filter-group date-range">
+                <label for="from">From:</label>
+                <input type="date" id="from" name="from">
+                <label for="to">To:</label>
+                <input type="date" id="to" name="to">
+            </div>
+
+            <div class="filter-group">
+                <button type="submit">Filter</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="export-section">
+        <button class="print-btn">🖨️ Print</button>
+        <button class="export-btn">⬇️ Export</button>
+    </div>
+
+    <div class="chart-section">
+        <h2>Chart Preview</h2>
+        <div class="chart-placeholder">[Chart goes here]</div>
+    </div>
+
+    <div class="results-section">
+        <h2>Report Results</h2>
+        <div class="table-placeholder">[Report table will be shown here]</div>
+    </div>
+</div>
+@endsection

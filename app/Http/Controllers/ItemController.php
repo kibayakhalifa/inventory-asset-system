@@ -33,7 +33,7 @@ class ItemController extends Controller
             }
         }
         //paginate results 
-        $items = $query->paginate(10)->appends($request->query());
+$items = $query->with(['lab', 'latestTransaction'])->paginate(10)->appends($request->query());
 
         // Get labs - ensuring no duplicates
     $labs = Lab::select('id', 'name')

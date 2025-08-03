@@ -37,5 +37,28 @@ class Item extends Model
     {
         return $query->whereNull('lab_id');
     }
+    public function getTotalBorrowedAttribute()
+    {
+        return $this->transactions()->where('action', 'issue')->sum('quantity');
+    }
+
+    public function getTotalReturnedAttribute()
+    {
+        return $this->transactions()->where('action', 'return')->sum('quantity');
+    }
+    public function getInUseAttribute()
+    {
+        return max(0, $this->total_borrowed - $this->total_returned);
+    }
+    // Item.php
+    public function latestTransaction()
+    {
+        return $this->hasOne(Transaction::class)->latest();
+    }
+
+    public function getLatestConditionAttribute()
+    {
+        return $this->latestTransaction?->condition ?? 'N/A';
+    }
 
 }

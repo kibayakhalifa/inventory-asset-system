@@ -46,7 +46,8 @@
                     <div class="form-group">
                         <select name="department">
                             <option value="">All Departments</option>
-                            <option value="general" {{ request('department') === 'general' ? 'selected' : '' }}>General</option>
+                            <option value="general" {{ request('department') === 'general' ? 'selected' : '' }}>General
+                            </option>
                             @foreach($labs as $lab)
                                 <option value="{{ $lab->id }}" {{ request('department') == $lab->id ? 'selected' : '' }}>
                                     {{ $lab->name }}
@@ -105,6 +106,7 @@
                         <th>Department</th>
                         <th>Type</th>
                         <th>Quantity</th>
+                        <th>Condition</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>
@@ -125,15 +127,27 @@
                                 </span>
                             </td>
                             <td class="quantity">{{ $transaction->quantity }}</td>
+                            <td class="condition">
+                                @if($transaction->condition)
+                                    <span class="badge badge-condition condition-{{ $transaction->condition }}">
+                                        {{ ucfirst($transaction->condition) }}
+                                    </span>
+                                @else
+                                    <span class="text-muted">N/A</span>
+                                @endif
+                            </td>
                             <td class="date">{{ $transaction->created_at->format('M d, Y H:i') }}</td>
                             <td class="actions">
-                                <a href="{{ route('transactions.show', $transaction) }}" class="btn-action btn-view" title="View">
+                                <a href="{{ route('transactions.show', $transaction) }}" class="btn-action btn-view"
+                                    title="View">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="{{ route('transactions.edit', $transaction) }}" class="btn-action btn-edit" title="Edit">
+                                <a href="{{ route('transactions.edit', $transaction) }}" class="btn-action btn-edit"
+                                    title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form action="{{ route('transactions.destroy', $transaction) }}" method="POST" class="d-inline delete-form">
+                                <form action="{{ route('transactions.destroy', $transaction) }}" method="POST"
+                                    class="d-inline delete-form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" class="btn-action btn-delete show-confirm" title="Delete">

@@ -112,6 +112,22 @@
                         </select>
                     </div>
                 </div>
+                <!-- Condition -->
+                <div class="form-section">
+                    <h3><i class="fas fa-info-circle"></i> Item Condition</h3>
+                    <div class="form-group">
+                        <label for="condition">Select Condition</label>
+                        <select id="condition" name="condition">
+                            <option value="">-- Optional --</option>
+                            <option value="new" {{ old('condition') === 'new' ? 'selected' : '' }}>New</option>
+                            <option value="good" {{ old('condition') === 'good' ? 'selected' : '' }}>Good</option>
+                            <option value="worn" {{ old('condition') === 'worn' ? 'selected' : '' }}>Worn</option>
+                            <option value="damaged" {{ old('condition') === 'damaged' ? 'selected' : '' }}>Damaged</option>
+                        </select>
+                    </div>
+                </div>
+
+
 
                 <!-- Hidden Fields -->
                 <input type="hidden" name="user_id" value="{{ auth()->id() }}">

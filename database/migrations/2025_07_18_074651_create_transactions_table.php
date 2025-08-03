@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');//(for the staff who issued or returned the stuff)
             $table->enum('action', ['issue', 'return']);// defines only the actions that i have listed get that in your head alex
             $table->integer('quantity');
+            $table->enum('condition', ['new', 'good', 'worn', 'damaged'])->nullable();
             $table->unsignedBigInteger('lab_id')->nullable(); 
             $table->timestamps();
 

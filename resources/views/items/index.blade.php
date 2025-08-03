@@ -79,7 +79,11 @@
                         <th>Assigned To</th>
                         <th>Total</th>
                         <th>Available</th>
+                        <th>Borrowed</th>
+                        <th>Returned</th>
+                        <th>In Use</th>
                         <th>Reorder At</th>
+                        <th>Condition</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -97,7 +101,11 @@
                                     {{ $item->quantity_available }}
                                 </span>
                             </td>
+                            <td>{{ $item->total_borrowed }}</td>
+                            <td>{{ $item->total_returned }}</td>
+                            <td>{{ $item->in_use }}</td>
                             <td class="threshold">{{ $item->reorder_threshold }}</td>
+                            <td>{{ ucfirst($item->latest_condition) }}</td>
                             <td class="actions">
                                 <a href="{{ route('items.edit', $item) }}" class="btn-action btn-edit" title="Edit">
                                     <i class="fas fa-edit"></i>
@@ -114,7 +122,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="empty-message">
+                            <td colspan="11" class="empty-message">
                                 <i class="fas fa-box-open"></i> No items found
                             </td>
                         </tr>

@@ -1,0 +1,132 @@
+.reports-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.filters-section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.date-range {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group button {
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-group button:hover {
+    background-color: #2980b9;
+}
+
+.export-section {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.export-section .print-btn,
+.export-section .export-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+}
+
+.print-btn {
+    background-color: #27ae60;
+}
+
+.print-btn:hover {
+    background-color: #1e874b;
+}
+
+.export-btn {
+    background-color: #e67e22;
+}
+
+.export-btn:hover {
+    background-color: #d35400;
+}
+
+.chart-section,
+.results-section {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.chart-section h2,
+.results-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.chart-placeholder,
+.table-placeholder {
+    background-color: #ecf0f1;
+    border: 2px dashed #bdc3c7;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    font-size: 16px;
+    border-radius: 6px;
+}

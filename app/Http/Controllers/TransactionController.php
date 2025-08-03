@@ -85,6 +85,7 @@ class TransactionController extends Controller
             'student_id' => 'required|exists:students,id',
             'quantity' => 'required|integer|min:1',
             'action' => 'required|in:issue,return',
+            'condition' => 'required|in:new,good,worn,damaged',
             'lab_id' => [
                 'nullable',
                 function ($attribute, $value, $fail) {
@@ -120,7 +121,8 @@ class TransactionController extends Controller
                 'user_id' => auth()->id(),
                 'action' => $request->action,
                 'quantity' => $request->quantity,
-                'lab_id' => $lab_id
+                'lab_id' => $lab_id,
+                'condition' => $request->condition
             ]);
 
             // Update item quantity
@@ -184,6 +186,7 @@ class TransactionController extends Controller
             'student_id' => 'required|exists:students,id',
             'quantity' => 'required|integer|min:1',
             'action' => 'required|in:issue,return',
+            'condition' => 'required|in:new,good,worn,damaged',
             'lab_id' => [
                 'nullable',
                 function ($attribute, $value, $fail) {
@@ -229,7 +232,8 @@ class TransactionController extends Controller
                 'student_id' => $request->student_id,
                 'action' => $request->action,
                 'quantity' => $request->quantity,
-                'lab_id' => $lab_id
+                'lab_id' => $lab_id,
+                'condition' => $request->condition 
             ]);
 
             DB::commit();

@@ -16,6 +16,7 @@ class Transaction extends Model
         "lab_id",
         "action",// to indicate  whether it is for issued or returned
         "quantity",
+        "condition",
     ];
     protected $dates = [
         "created_at",

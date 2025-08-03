@@ -453,3 +453,28 @@
         padding: 15px 10px;
     }
 }
+/* conditions */
+.badge-condition {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.condition-new {
+    background-color: #38a169; /* Green */
+}
+
+.condition-good {
+    background-color: #3182ce; /* Blue */
+}
+
+.condition-worn {
+    background-color: #d69e2e; /* Yellow */
+}
+
+.condition-damaged {
+    background-color: #e53e3e; /* Red */
+}
