@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ReportController;
 
 
 Route::get('/', function () {
@@ -33,7 +34,15 @@ Route::resource('labs', LabController::class);
 
 
 // stub routes to make sure there is no error
-Route::view('/reports', 'reports.index')->name('reports.index');
+Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+
+Route::post('/reports/fetch', [ReportController::class, 'fetch'])->name('reports.fetch');
+Route::get('/reports/export', [ReportController::class, 'export'])->name('reports.export');
+//test route
+Route::get('/test-report-form', function () {
+    return view('test-report');
+});
+
 
 
 Route::middleware('auth')->group(function () {

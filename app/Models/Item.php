@@ -18,6 +18,13 @@ class Item extends Model
         'reorder_threshold',
         'lab_id',
     ];
+    protected $appends = [
+        'total_borrowed',
+        'total_returned',
+        'in_use',
+        'latest_condition',
+    ];
+
 
     public function lab()
     {
